@@ -1,6 +1,7 @@
 # SortAlgorithms
 A python module that contains iterated (non-recursive) sort algorithms.<br />
-All algorithms were extensively tested before post, the test procedure <br />
+
+All algorithms were extensively tested before post. The test procedure <br />
 is automatic and can be performed inside the 'Test' folder using the <br />
 command pytest test_sort.py.
 
