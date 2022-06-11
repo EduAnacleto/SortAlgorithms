@@ -18,16 +18,10 @@ class Sort:
 
         return order
 
-    # Sort in O(nlog(n))
-    def heapSort(self, lista):
+    
+    def heapSort(self, lista): #O(n log n)
         n = len(lista)
-
-        print(lista)
         self.buildMaxHeap(lista, n)
-        print(lista)
-        print()
-        print()
-        print('-------')
 
         for i in range(n-1, 0, -1):
 
@@ -48,13 +42,12 @@ class Sort:
                     break
 
         return lista
-    
 
-    def buildMaxHeap(self, lista, n):
+    def buildMaxHeap(self, lista, n): #O(n)
         for i in range(1, n):
             self.maxHeapify(lista, i)
 
-    def maxHeapify(self, lista, i):
+    def maxHeapify(self, lista, i): #(log n)
         # if child is bigger than parent
         j = (i-1)//2
         if lista[i] > lista[j]:
@@ -64,11 +57,8 @@ class Sort:
                 lista[j], lista[(j - 1) // 2] = lista[(j - 1) // 2], lista[j]
                 j = (j - 1) // 2
 
-       
 
-
-
-    def mergeSort(self, lista):
+    def mergeSort(self, lista): #O(n log n)
         width = 1
         n = len(lista)
         while width < n:
@@ -110,8 +100,8 @@ class Sort:
             j += 1
             k += 1
 
-    # Sort in O(n^2)
-    def insertionSort(self, lista):
+
+    def insertionSort(self, lista): #O(n^2)
         for i in range(1, len(lista)):
             currentValue = lista[i]
             currentIndex = i
@@ -121,7 +111,8 @@ class Sort:
             lista[currentIndex] = currentValue
         return lista
 
-    def selectionSort(self, lista):
+
+    def selectionSort(self, lista): #O(n^2)
         print(lista)
         range_lista = range(len(lista))
         for i in range_lista[:-1]:
@@ -134,7 +125,8 @@ class Sort:
         print(lista)
         return lista
 
-    def bubbleSort(self, lista):
+
+    def bubbleSort(self, lista): #O(n^2)
         fim = len(lista)
         for i in range(fim-1, 0, -1):
             trocou = False
