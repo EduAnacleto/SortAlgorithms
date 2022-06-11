@@ -13,7 +13,12 @@ class TestaSortInt:
 
     @pytest.fixture
     def lista_aleatoria(self):
-        return [random.randrange(100) for x in range(100)]
+        return [random.randrange(-100,100) for x in range(100)]
+
+    #Testes
+    @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
+    def test_heapSort(self, esperado, o, lista_aleatoria):
+        assert o.ordenada(o.heapSort(lista_aleatoria)) == esperado
 
     @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
     def test_mergeSort(self, esperado, o, lista_aleatoria):

@@ -19,6 +19,55 @@ class Sort:
         return order
 
     # Sort in O(nlog(n))
+    def heapSort(self, lista):
+        n = len(lista)
+
+        print(lista)
+        self.buildMaxHeap(lista, n)
+        print(lista)
+        print()
+        print()
+        print('-------')
+
+        for i in range(n-1, 0, -1):
+
+            lista[0], lista[i] = lista[i], lista[0]
+
+            j, index = 0, 0
+            while True:
+                index = 2 * j + 1
+
+                if index < i-1 and lista[index] < lista[index + 1]:
+                    index += 1
+                
+                if index < i and lista[j] < lista[index]:
+                    lista[j], lista[index] = lista[index], lista[j]
+
+                j = index
+                if index >= i:
+                    break
+
+        return lista
+    
+
+    def buildMaxHeap(self, lista, n):
+        for i in range(1, n):
+            self.maxHeapify(lista, i)
+
+    def maxHeapify(self, lista, i):
+        # if child is bigger than parent
+        j = (i-1)//2
+        if lista[i] > lista[j]:
+            lista[i], lista[j] = lista[j], lista[i]            
+            # swap child and parent until parent is smaller
+            while lista[j] > lista[(j - 1) // 2] and j != 0:
+                lista[j], lista[(j - 1) // 2] = lista[(j - 1) // 2], lista[j]
+                j = (j - 1) // 2
+
+       
+
+
+
     def mergeSort(self, lista):
         width = 1
         n = len(lista)
