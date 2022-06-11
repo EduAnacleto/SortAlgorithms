@@ -14,14 +14,7 @@ unsorted_list = [1,4,2,1,5,7,8,2,1,3]
 
 print('heapSort     :', operator.heapSort(unsorted_list[:]))<br />
 print('mergeSort    :', operator.mergeSort(unsorted_list[:]))<br />
-<<<<<<< HEAD
 print('quickSort    :', operator.quckSort(unsorted_list[:]))<br />
 print('insertionSort:', operator.insertionSort(unsorted_list[:]))<br />
 print('selectionSort:', operator.selectionSort(unsorted_list[:]))<br />
 print('bubbleSort   :', operator.bubbleSort(unsorted_list[:]))
-
-=======
-print('insertionSort:', operator.insertionSort(unsorted_list[:]))<br />
-print('selectionSort:', operator.selectionSort(unsorted_list[:]))<br />
-print('bubbleSort   :', operator.bubbleSort(unsorted_list[:]))
->>>>>>> db612f3f1a9a850dfe37715357a07891cfacdb9d
