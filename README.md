@@ -1,2 +1,2 @@
 # SortAlgorithms
-A module containing sort algorithm implemented using Python.
+A module containing iterated (non-recursive) sort algorithms implemented using Python.
