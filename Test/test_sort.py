@@ -15,7 +15,7 @@ class TestaSortInt:
     def lista_aleatoria(self):
         return [random.randrange(-100,100) for x in range(100)]
 
-    #Testes
+    #Tests
     @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
     def test_heapSort(self, esperado, o, lista_aleatoria):
         assert o.ordenada(o.heapSort(lista_aleatoria)) == esperado
@@ -23,6 +23,10 @@ class TestaSortInt:
     @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
     def test_mergeSort(self, esperado, o, lista_aleatoria):
         assert o.ordenada(o.mergeSort(lista_aleatoria)) == esperado
+
+    @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
+    def test_quickSort(self, esperado, o, lista_aleatoria):
+        assert o.ordenada(o.quickSort(lista_aleatoria)) == esperado
 
     @pytest.mark.parametrize("esperado", [(1) for x in range(1000)])
     def test_insertionSort(self, esperado, o, lista_aleatoria):

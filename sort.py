@@ -100,6 +100,45 @@ class Sort:
             j += 1
             k += 1
 
+    
+    def quickSort(self, lista):
+        n = len(lista)
+        l = 0
+        h = n-1
+
+        stack = [l, h] + [0] * (n-2)
+        top = 1
+        
+        while top >= 0:
+            h = stack[top]
+            l = stack[top-1]
+            top -= 2
+
+            p = self.partition(lista, l, h)
+            if p-1 > l:
+                top += 2
+                stack[top-1] = l
+                stack[top] = p-1
+
+            if p + 1 < h:
+                top += 2
+                stack[top-1] = p+1
+                stack[top] = h
+
+        return lista
+
+    def partition(self, lista, l, h):
+        i = l-1
+        element = lista[h]
+        for j in range(l, h):
+            if lista[j] <= element:
+                i += 1
+                lista[i], lista[j] = lista[j], lista[i]
+        
+        i += 1
+        lista[i], lista[h] = lista[h], lista[i]
+        return i
+
 
     def insertionSort(self, lista): #O(n^2)
         for i in range(1, len(lista)):
