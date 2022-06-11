@@ -19,10 +19,52 @@ class Sort:
         return order
 
     # Sort in O(nlog(n))
+    def mergeSort(self, lista):
+        width = 1
+        num_components = len(lista)
+        while(width < n):
+            l = 0
+            while(l < n):
+                r = min(l+(2*width-1), n-1)
+                m = min(l+width-1, n-1)
 
+                merge(lista, l, m, r)
+                l == 2*width
+            width *= 2
+        return lista
+
+    def merge(lista, l, m, r):
+        n1 = m - l + 1
+        n2 = r - m
+        L = [0] * n1
+        R = [0] * n2
+        for i in range(n1):
+            L[i] = lista[l + i]
+        for i in range(n2):
+            R[i] = lista[m + i + 1]
+
+        i, j, k = 0, 0, l
+        while i < n1 and j < n2:
+            if L[i] <= R[j]:
+                a[k] = L[i]
+                i += 1
+            else:
+                a[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < n1:
+            a[k] = L[i]
+            i += 1
+            k += 1
+     
+        while j < n2:
+            a[k] = R[j]
+            j += 1
+            k += 1
 
     # Sort in O(n^2)
-    def insertion_sort(self, lista):
+    def insertionSort(self, lista):
         for i in range(1, len(lista)):
             currentValue = lista[i]
             currentIndex = i
@@ -32,7 +74,7 @@ class Sort:
             lista[currentIndex] = currentValue
         return lista
 
-    def selection_sort(self, lista):
+    def selectionSort(self, lista):
         print(lista)
         range_lista = range(len(lista))
         for i in range_lista[:-1]:
@@ -45,7 +87,7 @@ class Sort:
         print(lista)
         return lista
 
-    def bubble_sort(self, lista):
+    def bubbleSort(self, lista):
         fim = len(lista)
         for i in range(fim-1, 0, -1):
             trocou = False
